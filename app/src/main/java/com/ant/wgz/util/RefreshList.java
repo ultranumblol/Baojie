@@ -44,7 +44,10 @@ public class RefreshList extends AsyncTask {
     protected Object doInBackground(Object[] params) {
         try {
             Thread.sleep(2000);
-            mRefreshListener.Refresh();
+            if (mRefreshListener!=null){
+
+                mRefreshListener.Refresh();
+            }
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

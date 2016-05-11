@@ -43,7 +43,7 @@ public class Fragment1 extends Fragment {
         recyclerView = (RecyclerView) view.findViewById(R.id.id_fragm1_rycview);
         mfresh = (SwipeRefreshLayout) view.findViewById(R.id.id_frag1_refresh);
         root = (LinearLayout) view.findViewById(R.id.id_fragm1_rootView);
-        mfresh.setColorSchemeResources(R.color.colorPrimary);
+        mfresh.setColorSchemeResources(R.color.colorPrimary, R.color.red2);
         mfresh.setSize(SwipeRefreshLayout.LARGE);
         mfresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
