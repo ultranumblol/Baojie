@@ -2,6 +2,7 @@ package com.ant.wgz;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import com.ant.wgz.adapter.MyFragmentPagerAdapter;
 import com.ant.wgz.fragment.Fragment1;
 import com.ant.wgz.fragment.Fragment2;
 import com.ant.wgz.fragment.Fragment3;
+import com.ant.wgz.service.MsgService;
 import com.ant.wgz.view.CustomViewPager;
 
 import java.lang.reflect.Field;
@@ -35,7 +37,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getOverflowMenu();
+        openservice();
         init();
+    }
+
+    private void openservice() {
+        startService(new Intent(this, MsgService.class));
     }
 
     private void init() {

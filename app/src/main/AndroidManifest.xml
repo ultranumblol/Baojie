@@ -20,7 +20,17 @@
         <activity
             android:name=".OrderActivity"
             android:label="@string/title_activity_order"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-    </application>
+            android:screenOrientation="locked"
+            android:theme="@style/AppTheme.NoActionBar" />
 
+        <service
+            android:name=".service.msgService2"
+            android:enabled="true"
+            android:exported="true"></service>
+        <service android:name=".service.MsgService"></service>
+    </application>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS"></uses-permission>
 </manifest>
