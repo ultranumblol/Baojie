@@ -17,6 +17,7 @@ import com.ant.wgz.fragment.Fragment2;
 import com.ant.wgz.fragment.Fragment3;
 import com.ant.wgz.service.MsgService;
 import com.ant.wgz.view.CustomViewPager;
+import com.umeng.analytics.MobclickAgent;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -97,6 +98,18 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
     }
 
     @Override

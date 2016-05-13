@@ -16,6 +16,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -84,17 +85,24 @@ public class Fragment1 extends Fragment {
         receiver = new MsgReceiver();
         IntentFilter filter=new IntentFilter();
         filter.addAction("com.ant.wgz.service.MsgService");
-        getActivity().registerReceiver(receiver,filter);
-
+        getActivity().registerReceiver(receiver, filter);
+        Log.i("msg", "注册receiver成功！");
 
 
 
     }
 
     @Override
-    public void onPause() {
-        super.onPause();
-        getActivity().unregisterReceiver(receiver);
+    public void onDestroy() {
+
+        try {
+            getActivity().unregisterReceiver(receiver);
+            Log.i("msg", "receiver已经取消注册！");
+        } catch (Exception e) {
+            Log.i("msg", "没有注册receiver");
+            e.printStackTrace();
+        }
+        super.onDestroy();
     }
 
     private class MsgReceiver extends BroadcastReceiver{

@@ -26,4 +26,5 @@ dependencies {
     compile files('libs/dom4j-2.0.0-RC1.jar')
     compile 'com.android.support:cardview-v7:23.1.0'
     compile 'com.android.support:design:23.1.0'
+    compile 'com.umeng.analytics:analytics:latest.integration'
 }
