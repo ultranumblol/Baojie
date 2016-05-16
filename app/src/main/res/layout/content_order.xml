@@ -89,7 +89,7 @@
                 android:textSize="14sp"
                 android:id="@+id/id_order_address"
                 android:text="成都市武侯区科园南二路6号蚂蚁物流"
-
+                android:textColor="@color/blue"
                 android:paddingBottom="15dp"
                 />
             <ImageView
